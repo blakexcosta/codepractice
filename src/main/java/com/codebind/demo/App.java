@@ -1,6 +1,10 @@
 package com.codebind.demo;
 
+import sun.reflect.generics.tree.Tree;
+
 import java.util.ArrayList;
+import java.util.Enumeration;
+import java.util.LinkedList;
 
 /**
  * Hello world!
@@ -16,28 +20,22 @@ public class App
         System.out.println(bob);
         System.out.println("HI!");
 
-        //coding interview problem. day 1 3/11/2018
-        //Given an array of numbers, return whether any two sums to K.
-        //For example, given [10, 15, 3, 7] and K of 17, return true since 10 + 7 is 17.
-        int[] arrayofNums = new int[]{10,15, 3, 7};
-        //checking if elements add up to 10
-        int elementToCheckTo = 25;
-        //loop through first time for placeholder.
-        boolean sumsTo = false; //default boolean
-        for (int i : arrayofNums) {
-            //loop through second time to check if that elements sum match up to elementToCheckTo
-            for (int j : arrayofNums) {
-                if ((i + j) == elementToCheckTo) {
-                    sumsTo = true;
-                }
+        //coding interview problem. day 2 3/14/2018
+        // serialize a tree to a string and then deserialize back to a tree.
+        //
+        TreeNode<String> root = new TreeNode<String>("root");
+        TreeNode<String> node0 = root.addChild("node0");
+        TreeNode<String> node1 = root.addChild("node1");
+        TreeNode<String> node2 = root.addChild("node2");
+        {
+            TreeNode<String> node20 = node2.addChild(null);
+            TreeNode<String> node21 = node2.addChild("node21");
+            {
+                TreeNode<String> node210 = node20.addChild("node210");
             }
         }
-        System.out.println(sumsTo);
-    }
 
-    public String sample(){
-        return "" + bob;
+        System.out.println(node2);
     }
-
 
 }
