@@ -20,22 +20,35 @@ public class App
         System.out.println(bob);
         System.out.println("HI!");
 
-        //coding interview problem. day 2 3/14/2018
-        // serialize a tree to a string and then deserialize back to a tree.
-        //
-        TreeNode<String> root = new TreeNode<String>("root");
-        TreeNode<String> node0 = root.addChild("node0");
-        TreeNode<String> node1 = root.addChild("node1");
-        TreeNode<String> node2 = root.addChild("node2");
-        {
-            TreeNode<String> node20 = node2.addChild(null);
-            TreeNode<String> node21 = node2.addChild("node21");
-            {
-                TreeNode<String> node210 = node20.addChild("node210");
-            }
-        }
+        //coding interview problem. day 4 3/15/2018
+        //cons(a, b) constructs a pair, and car(pair) and cdr(pair)
+        // returns the first and last element of that pair.
+        // For example, car(cons(3, 4)) returns 3, and cdr(cons(3, 4)) returns 4.
+        //Given this implementation of cons:
+//    def cons(a, b):
+//        return lambda f : f(a, b)
+//        Implement car and cdr.
+        //this isn't the best question. need more clarifying info. I'm going to solve
+        //it anyways
+        ConsInterface list = cons();
 
-        System.out.println(node2);
+    }
+    interface ConsInterface{
+        public ArrayList pair(ArrayList<Integer> arrayList); //need interface so know what method to call
     }
 
+
+    public static ConsInterface cons() {
+        ConsInterface a = (list) -> list; //returning the arraylist
+        return a;
+    }
+
+    public static void car(ConsInterface) {
+        cons().pair().get(0);
+    }
+
+    public static void cdr() {
+        cons().pair().get(-1);
+    }
 }
+
